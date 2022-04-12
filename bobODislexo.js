@@ -6,29 +6,23 @@
 
 //facil
 function hey(mensagemProBob) {
+    if (mensagemProBob === null || mensagemProBob === undefined || mensagemProBob.trim() === "") {
+        console.log("Tudo bem. Que seja");
+    } else {
+        const ehMaiusculo = mensagemProBob === mensagemProBob.toUpperCase();
+        const ehPergunta = mensagemProBob[mensagemProBob.length - 1] === "?";
 
-    if (mensagemProBob !== null && mensagemProBob !== undefined) {
-        if (mensagemProBob.trim() === "" || mensagemProBob.trim() === " ") {
-            console.log("Tudo bem. Que seja");
-
-        } else if (mensagemProBob[mensagemProBob.length - 1] === "?") {
-            if (mensagemProBob === mensagemProBob.toUpperCase()) {
+        if (ehPergunta) {
+            if (ehMaiusculo) {
                 console.log("Relaxa, eu sei o que eu to fazendo.");
-
             } else {
                 console.log("Certo");
-
             }
-        } else if (mensagemProBob === mensagemProBob.toUpperCase()) {
+        } else if (ehMaiusculo) {
             console.log("Calma mano");
-        
         } else {
             console.log("Tanto faz");
-        
         }
-    } else {
-        console.log("Tudo bem. Que seja");
-    
     }
 }
 
